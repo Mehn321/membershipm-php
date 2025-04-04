@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['changePassword'])) {
     $confirmPassword = $_POST['confirmPassword'];
 
     $userId = $_SESSION['user_id'];
-    $validatePasswordQuery = "SELECT password FROM users WHERE id = $userId";
+    $validatePasswordQuery = "SELECT password FROM members WHERE id = $userId";
     $validatePasswordResult = $conn->query($validatePasswordQuery);
 
     if ($validatePasswordResult->num_rows > 0) {

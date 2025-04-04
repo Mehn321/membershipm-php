@@ -119,7 +119,7 @@ if (isset($_GET['id'])) {
                                 <div class="col-md-5">
                                     <p><strong>Membership Number:</strong> <?php echo $memberDetails['membership_number']; ?></p>
                                     <p><strong>Full Name:</strong> <?php echo $memberDetails['fullname']; ?></p>
-                                    <p><strong>Date of Birth:</strong> <?php echo $memberDetails['dob']; ?></p>
+                                    <p><strong>Date of Birth:</strong> <?php echo $memberDetails['date_of_birth']; ?></p>
                                     <p><strong>Gender:</strong> <?php echo $memberDetails['gender']; ?></p>
                                     <p><strong>Contact Number:</strong> <?php echo $memberDetails['contact_number']; ?></p>
                                     <p><strong>Email:</strong> <?php echo $memberDetails['email']; ?></p>

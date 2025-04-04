@@ -60,7 +60,7 @@ CREATE TABLE `members` (
   `userID` int(11) NOT NULL,
   `address_id` int(11) DEFAULT NULL,
   `fullname` varchar(255) NOT NULL,
-  `dob` date NOT NULL,
+  `date_of_birth` date NOT NULL,
   `gender` enum('Male','Female','Other') NOT NULL,
   `contact_number` varchar(20) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -76,7 +76,7 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`members_id`, `userID`, `address_id`, `fullname`, `dob`, `gender`, `contact_number`, `email`, `occupation`, `membership_typeID`, `membership_number`, `created_at`, `photo`, `expiry_date`) VALUES
+INSERT INTO `members` (`members_id`, `userID`, `address_id`, `fullname`, `date_of_birth`, `gender`, `contact_number`, `email`, `occupation`, `membership_typeID`, `membership_number`, `created_at`, `photo`, `expiry_date`) VALUES
 (1, 1, 1, 'Demo NameUPD', '1995-11-10', 'Male', '4444444444', 'demo@mail.com', 'Test', 2, 'CA-923020', '2024-02-02 04:10:30', 'default.jpg', '2024-05-04'),
 (4, 1, 2, 'Qwerty', '1990-12-12', 'Male', '1010101012', 'qwerty@mail.com', 'addddd', 2, 'CA-610243', '2024-02-04 03:40:16', 'default.jpg', '2025-04-15'),
 (6, 1, 4, 'Member A', '1990-12-12', 'Female', '1111111100', 'membera@test.com', 'Demo', 10, 'CA-159695', '2024-02-05 01:12:53', 'default.jpg', '2025-09-15'),

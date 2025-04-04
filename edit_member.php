@@ -171,8 +171,8 @@ if (isset($_GET['id'])) {
                                         placeholder="Enter full name" required value="<?php echo $memberDetails['fullname']; ?>">
                                 </div>
                                         <div class="col-sm-3">
-                                            <label for="dob">Date of Birth</label>
-                                            <input type="date" class="form-control" id="dob" name="dob" value="<?php echo $memberDetails['dob']; ?>" required>
+                                            <label for="date_of_birth">Date of Birth</label>
+                                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="<?php echo $memberDetails['date_of_birth']; ?>" required>
                                         </div>
                                         
                                         <div class="col-sm-3">

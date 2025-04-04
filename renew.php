@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         placeholder="Enter full name" required value="<?php echo $memberDetails['fullname']; ?>" disabled>
                                 </div>
                                         <div class="col-sm-6">
-                                            <label for="dob">Membership Number</label>
+                                            <label for="date_of_birth">Membership Number</label>
                                             <input type="text" class="form-control" id="mm" name="mm" value="<?php echo $memberDetails['membership_number']; ?>" disabled>
                                         </div>
                                         

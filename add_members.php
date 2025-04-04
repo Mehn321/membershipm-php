@@ -107,8 +107,8 @@ function generateUniqueFileName($originalName) {
                                                    placeholder="Enter full name" required>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label for="dob">Date of Birth</label>
-                                            <input type="date" class="form-control" id="dob" name="dob" required>
+                                            <label for="date_of_birth">Date of Birth</label>
+                                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
                                         </div>
                                         <div class="col-sm-3">
                                             <label for="gender">Gender</label>
