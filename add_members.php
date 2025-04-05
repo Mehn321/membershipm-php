@@ -20,9 +20,9 @@ function generateUniqueFileName($originalName) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fullname = $_POST['fullname'];
         $email = $_POST['email'];
-        $contact = $_POST['contact'];
+        $contact_number = $_POST['contactNumber'];
         $gender = $_POST['gender'];
-        $membership_type = $_POST['membership_type'];
+        $membership_type = $_POST['membershipType'];
     
         $city = $_POST['city'];
         $country = $_POST['country']; 
@@ -37,10 +37,10 @@ function generateUniqueFileName($originalName) {
         
             $membershipNumber = 'CA-' . str_pad(mt_rand(1, 999999), 6, '0', STR_PAD_LEFT);
         
-            $sql = "INSERT INTO members (membership_number, fullname, email, contact, gender, membership_typeID, address_id, join_date) 
+            $sql = "INSERT INTO members (membership_number, fullname, email, contact_number, gender, membership_typeID, address_id, join_date)
                     VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssssii", $membershipNumber, $fullname, $email, $contact, $gender, $membership_type, $address_id);
+            $stmt->bind_param("sssssii", $membershipNumber, $fullname, $email, $contact_number, $gender, $membership_type, $address_id);
         
             if ($stmt->execute()) {
                 $response['success'] = true;

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $id = $_POST['edit_id'];
 
-    $updateQuery = "UPDATE membership_types SET type = '$membershipType', amount = $membershipAmount WHERE id = $id";
+    $updateQuery = "UPDATE membership_types SET type = '$membershipType', amount = $membershipAmount WHERE membership_typeID = $id";
 
     if ($conn->query($updateQuery) === TRUE) {
         $response['success'] = true;

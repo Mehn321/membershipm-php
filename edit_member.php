@@ -94,7 +94,7 @@ if (isset($_GET['id'])) {
         }
     
         // Update member (without address_id if it was already handled)
-        $updateMemberSql = "UPDATE members SET fullname = ?, email = ?, contact = ?, gender = ?, membership_typeID = ? WHERE id = ?";
+        $updateMemberSql = "UPDATE members SET fullname = ?, email = ?, contact_number = ?, gender = ?, membership_typeID = ? WHERE id = ?";
         $updateMemberStmt = $conn->prepare($updateMemberSql);
         $updateMemberStmt->bind_param("sssssi", $fullname, $email, $contact, $gender, $membership_type, $member_id);
     

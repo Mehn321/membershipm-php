@@ -11,13 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $hashed_password = md5($password);
 
-            $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$hashed_password'";
+            $sql = "SELECT * FROM members WHERE email = '$email' AND password = '$hashed_password' AND members_id = 4";
             $result = $conn->query($sql);
 
             if ($result->num_rows == 1) {
                 $row = $result->fetch_assoc();
 
-                $_SESSION['user_id'] = $row['usersID'];
+                $_SESSION['user_id'] = $row['members_id'];
                 $_SESSION['email'] = $row['email'];
 
                 header("Location: dashboard.php");

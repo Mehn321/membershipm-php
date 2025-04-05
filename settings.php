@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateSettings'])) {
 
         $targetPath = $uploadPath . $logoName;
         if (move_uploaded_file($logoTmpName, $targetPath)) {
-            $updateSettingsQuery = "UPDATE settings SET system_name = '$systemName', logo = '$targetPath', currency = '$currency' WHERE id = 1";
+            $updateSettingsQuery = "UPDATE settings SET system_name = '$systemName', logo = '$targetPath', currency = '$currency' WHERE settingsID = 1";
             $updateSettingsResult = $conn->query($updateSettingsQuery);
 
             if ($updateSettingsResult) {
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateSettings'])) {
             $errorMessage = 'Error moving uploaded file.';
         }
     } else {
-        $updateSettingsQuery = "UPDATE settings SET system_name = '$systemName', currency = '$currency' WHERE id = 1";
+        $updateSettingsQuery = "UPDATE settings SET system_name = '$systemName', currency = '$currency' WHERE settingsID = 1";
         $updateSettingsResult = $conn->query($updateSettingsQuery);
         // Visit codeastro.com for more projects
         if ($updateSettingsResult) {
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['changePassword'])) {
     $confirmPassword = $_POST['confirmPassword'];
 
     $userId = $_SESSION['user_id'];
-    $validatePasswordQuery = "SELECT password FROM members WHERE id = $userId";
+    $validatePasswordQuery = "SELECT password FROM members WHERE members_id = 4";
     $validatePasswordResult = $conn->query($validatePasswordQuery);
 
     if ($validatePasswordResult->num_rows > 0) {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['changePassword'])) {
 
         if (md5($currentPassword) === $hashedPassword) {
             $hashedNewPassword = md5($newPassword);
-            $updatePasswordQuery = "UPDATE users SET password = '$hashedNewPassword' WHERE id = $userId";
+            $updatePasswordQuery = "UPDATE members SET password = '$hashedNewPassword' WHERE members_id = 4";
             $updatePasswordResult = $conn->query($updatePasswordQuery);
 
             if ($updatePasswordResult) {
